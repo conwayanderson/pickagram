@@ -20,7 +20,7 @@ need to register for a client on the [Instagram API][0].
 
 ## License (Simplified BSD)
 
-Copyright (c) Isaac Bythewood  
+Copyright (c) Isaac Bythewood & Conway Anderson  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
