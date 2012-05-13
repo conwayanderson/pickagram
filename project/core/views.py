@@ -62,7 +62,7 @@ def oauth_callback(request):
             messages.error(request, 'Could not get access token.')
     else:
         error = True
-        mesages.error(request, 'You must have an oauth access code to login, '
+        messages.error(request, 'You must have an oauth access code to login, '
                                'no code was provided.')
 
     if error:
