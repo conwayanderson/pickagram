@@ -13,3 +13,6 @@ pip-log.txt
 
 # jenkins
 /reports/
+
+# database
+/development.db

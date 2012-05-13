@@ -37,6 +37,13 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'project.urls'
 
 
+INSTAGRAM_CONFIG = {
+    'client_id': '',
+    'client_secret': '',
+    'redirect_uri': 'http://example.com/oauth_callback/'
+}
+
+
 ADMINS = (
     ('Isaac Bythewood', 'isaac@bythewood.me'),
 )

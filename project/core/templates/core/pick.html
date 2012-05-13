@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Pick{% endblock %}
+
+{% block yield %}
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <h1>Pick your favorite!</h1>
+                <p>Selecting an image moves you to the next set and likes the image on Instagram.</p>
+            </div>
+            <div class="span4" align="right">
+                <h3>Picks this session: {{ counter }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for item in popular %}
+                <div class="span6">
+                    <a href="{% url core:like item.id %}">
+                        <img src="{{ item.images.standard_resolution.url }}" alt="">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="span12" align="center">
+                <a href="{% url core:pick %}" class="btn btn-large btn-primary" id="skip">
+                    Skip
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

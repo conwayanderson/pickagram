@@ -1,35 +1,50 @@
-# django-boilerplate
+# Pickagram
 
-This is my django-boilerplate, there are many like it but this one is mine. The
-point of my boilerplate is to have separate requirements and settings for my
-three environments:
+A simple instagram hot-or-not with a twist.
 
- + Production
- + Development
- + Jenkins
+## Getting Started
 
-Most Django boilerplates have the first two but all lack Jenkins settings and I
-really like Jenkins...
+Fill out the Instagram settings in `project/settings/__init__.py`. You will
+need to register for a client on the [Instagram API][0].
 
-## Using Different Settings
+    INSTAGRAM_CONFIG = {
+        'client_id': '',
+        'client_secret': '',
+        'redirect_uri': 'http://example.com/oauth_callback/'
+    }
 
-The easiest way is to use the `--settings` switch during `runserver`. e.g.
-`bin/python manage.py runserver --settings=project.settings.jenkins`
+## Credits
 
-The way you should do it on your production server is by changing this line in
-the `manage.py` file:
+ + Design and Idea by [Conway Anderson][1]
+ + Coded by [Isaac Bythewood][2]
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings.development")
+## License (Simplified BSD)
 
-For example set `project.settings.development` to `project.settings.production`
-and then you acn simply use `bin/python manage.py runserver` without the
-`--settings` switch.
+Copyright (c) Isaac Bythewood  
+All rights reserved.
 
-## Build Status
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-You can check the latest version of django-boilerplate's build status on my
-[personal Jenkins server][0]. This lets you if the master branch actually works.
-It also lets you know my pep8 and pylint conformance along with my test code
-coverage. (See, isn't this cool!)
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
 
-[0]: http://jenkins.bythewood.me/job/django-boilerplate/
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+[0]: http://instagram.com/developer/clients/manage/
+[1]: http://conwayanderson.com/
+[2]: http://isaacbythewood.com/

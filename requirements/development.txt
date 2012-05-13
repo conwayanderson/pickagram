@@ -1,5 +1,6 @@
 Django==1.4
 South==0.7.5
 PIL==1.1.7
+python-instagram==0.7.3
 
 werkzeug==0.8.3

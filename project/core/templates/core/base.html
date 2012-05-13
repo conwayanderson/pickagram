@@ -10,10 +10,53 @@
             <link href="/static/vendor/bootstrap/2.0.3/css/bootstrap.min.css" rel="stylesheet">
             <link href="/static/vendor/bootstrap/2.0.3/css/bootstrap-responsive.min.css" rel="stylesheet">
         {% endif %}
+
+        <link href="/static/core/css/pickagram.css" rel="stylesheet">
     </head>
 
     <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a href="{% url core:home %}" class="brand">Pickagram</a>
+
+                    {% if access_token %}
+                    <ul class="nav pull-right">
+                        <li>
+                            <a href="{% url core:oauth-logout %}">
+                                Logout
+                            </a>
+                        </li>
+                        <li>
+                            <span id="username">
+                                {{ access_token.1.username }}
+                            </span>
+                            <span id="profile-picture">
+                                <img src="{{ access_token.1.profile_picture}}" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
         {% block yield %}{% endblock %}
+
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <p>Created by <a href="http://conwayanderson.com/">Conway
+                        Anderson</a> and <a href="http://isaacbythewood.com/">
+                        Isaac Bythewood</a>.</p>
+                </div>
+            </div>
+        </div>
 
         {% if debug %}
             <script src="/static/vendor/jquery/1.7.2/jquery.js"></script>

@@ -5,9 +5,13 @@
 {% block yield %}
     <div class="container">
         <div class="row">
-            <div class="span12">
-                <h1>It works Jim!</h1>
-                <p>Now go and customize it!</p>
+            <div class="span6 offset3" align="center">
+                <h1>Pickagram</h1>
+                <p>You must authenticate using yoru Instagram credentails to
+                    play Pickagram.</p>
+                <a href="{{ instagram_oauth_url }}" class="btn btn-large btn-primary">
+                    Get Started!
+                </a>
             </div>
         </div>
     </div>
