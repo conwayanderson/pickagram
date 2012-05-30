@@ -15,45 +15,47 @@
     </head>
 
     <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a href="{% url core:home %}" class="brand">Pickagram</a>
-
-                    {% if access_token %}
-                    <ul class="nav pull-right">
-                        <li>
-                            <a href="{% url core:oauth-logout %}">
-                                Logout
-                            </a>
-                        </li>
-                        <li>
-                            <span id="username">
-                                {{ access_token.1.username }}
-                            </span>
-                            <span id="profile-picture">
-                                <img src="{{ access_token.1.profile_picture}}" alt="">
-                            </span>
-                        </li>
-                    </ul>
-                    {% endif %}
+        <div id="header-wrapper">
+            <div class="container" id="header">
+                <div class="row">
+                    <div align="center" class="span4 offset4">
+                        <h1>
+                            <a href="{% url core:home %}"><img src="/static/core/imgs/logo.png" alt="Pickagram"></a>
+                        </h1>
+                    </div>
+                    <div class="span4">
+                        {% if access_token %}
+                            <div id="profile" class="pull-right">
+                                <span id="picture">
+                                    <img src="{{ access_token.1.profile_picture}}" alt="">
+                                </span>
+                                <span id="username">
+                                    <strong>
+                                        {{ access_token.1.username }}
+                                    </strong>
+                                </span>
+                                <span id="logout">
+                                    <a href="{% url core:oauth-logout %}">
+                                        (Sign Out)
+                                    </a>
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
 
         {% block yield %}{% endblock %}
 
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <p>Created by <a href="http://conwayanderson.com/">Conway
-                        Anderson</a> and <a href="http://isaacbythewood.com/">
-                        Isaac Bythewood</a>.</p>
+        <div id="footer-wrapper">
+            <div class="container" id="footer">
+                <div class="row">
+                    <div class="span12" align="center">
+                        <p>&copy;{% now "Y"%} Design & Product by <a href="http://conwayanderson.com/">Conway
+                            Anderson</a> | Development by <a href="http://isaacbythewood.com/">
+                            Isaac Bythewood</a></p>
+                    </div>
                 </div>
             </div>
         </div>
